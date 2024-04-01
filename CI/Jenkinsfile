@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKERHUB_CREDS=credentials('mle-template')
+        DOCKERHUB_CREDS=credentials('dockerhub-creds')
         LC_ALL = "en_US.UTF-8"
         LANG    = "en_US.UTF-8"
         LANGUAGE = "en_US.UTF-8"
@@ -16,7 +16,7 @@ options {
         stage('Clone github repository') {
             steps {
                 cleanWs()
-                bat 'chcp 65001 && git clone -b main https://github.com/IcyAltair/mle-template.git'
+                bat 'chcp 65001 && git clone -b main https://github.com/kupaqu/mle-template.git'
 				}
 			}
 
@@ -88,7 +88,7 @@ options {
 
         stage('Push'){
             steps{
-                bat 'chcp 65001 && docker push altairzero/mle-template:latest'
+                bat 'chcp 65001 && docker push kupaqu/mle-template:latest'
             }
         }
 	}
