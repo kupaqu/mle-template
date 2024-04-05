@@ -42,7 +42,7 @@ options {
 
     post {
         always {
-            sh 'docker stop mle-template && docker logout'
+            sh 'docker stop mle-template && docker remove mle-template && docker logout'
         }
     }
 }
