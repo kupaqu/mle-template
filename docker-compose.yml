@@ -6,3 +6,4 @@ services:
        ports:
            - 8000:8000
        image: kupaqu/mle-template:latest
+       dockerfile: model.dockerfile
