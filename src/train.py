@@ -23,11 +23,11 @@ class MultiModel():
         self.X_train = pd.read_csv(
             self.config["SPLIT_DATA"]["X_train_path"], index_col=0)
         self.y_train = pd.read_csv(
-            self.config["SPLIT_DATA"]["y_train_path"], index_col=0)
+            self.config["SPLIT_DATA"]["y_train_path"], index_col=0)['label']
         self.X_test = pd.read_csv(
             self.config["SPLIT_DATA"]["X_test_path"], index_col=0)
         self.y_test = pd.read_csv(
-            self.config["SPLIT_DATA"]["y_test_path"], index_col=0)
+            self.config["SPLIT_DATA"]["y_test_path"], index_col=0)['label']
         
         self.project_path = os.getcwd()
         self.experiments_path = os.path.join(self.project_path, 'experiments')
