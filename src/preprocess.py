@@ -55,6 +55,8 @@ class DataMaker():
                 'y_train_path': self.y_train_path,
                 'y_test_path': self.y_test_path,
             }
+            with open('config.ini', 'w') as configfile:
+                self.config.write(configfile)
             self.log.info("X y data is ready")
 
             return True
