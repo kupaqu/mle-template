@@ -61,4 +61,4 @@ class MultiModel():
 
 if __name__ == "__main__":
     multi_model = MultiModel()
-    multi_model.log_reg(predict=True)
+    multi_model.lr()
