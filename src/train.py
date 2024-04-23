@@ -30,7 +30,7 @@ class MultiModel():
             self.config["SPLIT_DATA"]["y_test_path"], index_col=0)
         
         self.project_path = os.getcwd()
-        self.experiments_path = os.path.join(project_path, 'experiments')
+        self.experiments_path = os.path.join(self.project_path, 'experiments')
         self.lr_path = os.path.join(self.project_path, 'lr.sav')
 
         self.log.info("MultiModel is ready")
