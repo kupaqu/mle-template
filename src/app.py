@@ -9,8 +9,9 @@ import os
 app = FastAPI()
 
 # Загружаем модель
-exp_path = os.path.join(os.getcwd(), "experiments")
-model_path = os.path.join(exp_path, "lr.sav")
+project_path = os.getcwd()
+models_path = os.path.join(project_path, 'models')
+model_path = os.path.join(models_path, "lr.sav")
 model = joblib.load(model_path)
 
 # Определяем класс Pydantic модели для входных данных
