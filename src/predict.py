@@ -53,6 +53,9 @@ class Predictor():
             self.config["SPLIT_DATA"]["X_test_path"], index_col=0)
         self.y_test = pd.read_csv(
             self.config["SPLIT_DATA"]["y_test_path"], index_col=0)
+
+        self.project_path = os.getcwd()
+        
         self.log.info("Predictor is ready")
 
     def predict(self) -> bool:
