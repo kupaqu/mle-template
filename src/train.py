@@ -31,7 +31,9 @@ class MultiModel():
         
         self.project_path = os.getcwd()
         self.experiments_path = os.path.join(self.project_path, 'experiments')
-        self.lr_path = os.path.join(self.project_path, 'lr.sav')
+        self.models_path = os.path.join(self.project_path, 'models')
+        os.makedirs(self.models_path, exist_ok=True)
+        self.lr_path = os.path.join(self.models_path, 'lr.sav')
 
         self.log.info("MultiModel is ready")
 
