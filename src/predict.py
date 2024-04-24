@@ -106,7 +106,8 @@ class Predictor():
                     date_time = datetime.fromtimestamp(time.time())
                     str_date_time = date_time.strftime("%Y_%m_%d_%H_%M_%S")
                     exp_dir = os.path.join(exp_path, f'exp_{test[:6]}_{str_date_time}')
-                    os.mkdir(exp_dir)
+                    # os.mkdir(exp_dir)
+                    os.makedirs(exp_dir, exist_ok=True)
                     with open(os.path.join(exp_dir,"exp_config.yaml"), 'w') as exp_f:
                         yaml.safe_dump(exp_data, exp_f, sort_keys=False)
                     shutil.copy(os.path.join(os.getcwd(), "logfile.log"), os.path.join(exp_dir,"exp_logfile.log"))
